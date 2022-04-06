@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto data</title>
+</head>
+
+<body>
+    <button class="btn btn-info" (click)="getdata()">GET CRYPTO DATA</button>
+
+    <div class="container">
+        <p class="text-center"><small>Data from WazirX api</small></p>
+        <p class="text-center">TOP 5 CRYPTOS</p>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>CRYPTO</th>
+                    <th>PRICE (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cr of parsedResult;index as i">
+                    <td *ngIf="i< 5">{{cr.baseAsset}}</td>
+                    <td *ngIf="i< 5">{{cr.lastPrice}} /-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
